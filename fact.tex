@@ -1,0 +1,30 @@
+\large
+\coordinate (mirror) at (4.1, 3.95);
+\coordinate (cameracenter) at (8.4, 4.6);
+
+\node[anchor=south west,inner sep=0] (background) at (0, 0) {\includegraphics[height=0.92\textheight]{images/fact.jpg}};
+
+
+\node[anchor=south west,inner sep=0] (camera) at (7, 0.5) {\includegraphics[width=0.2\textwidth]{images/camera.jpg}};
+
+
+
+\draw[very thick,tugreen] (mirror) circle (2.05);
+%\draw[thick,tugreen] (4,3.75) circle (0.05);
+\draw[very thick,tugreen, rotate around={45:(mirror)}] ($(mirror)-(2.05,0)$) --
+  ($(mirror)+(2.05,0)$)
+  node[midway, above, black, fill=white, fill opacity=0.7, text opacity=1, rotate=45, rounded corners,]{$\diameter = \SI{3.8}{\meter}$};
+
+
+
+\draw[very thick,tugreen] (cameracenter) ellipse (0.58 and 0.73);
+%\draw[thick,tugreen] (7.9,4.4) circle (0.05);
+\draw[very thick,tugreen] ($(cameracenter)-(0.58,0)$) to ($(camera.west)-(0.005*\textwidth,0)$);
+\draw[very thick,tugreen] ($(cameracenter)+(0.58,0)$) to ($(camera.east)+(0.005*\textwidth,0)$);
+\draw[very thick,tugreen] (camera.center) circle (0.105\textwidth);
+
+\node[black,anchor=south west, fill=white, rounded corners] at (0.6,0.15) {\textbf{Roque des los Muchachos, La Palma}};
+
+
+\node[black,anchor=center,text centered, fill=white, fill opacity=0.7, text opacity=1, rounded corners] at (camera.center) {\textbf{1440 Pixel}};
+\node[black,anchor=east,text centered] at (9.9,6.4) {\textbf{1 Pixel = 1 SiPM = 3600 G-APDs}};

@@ -1,0 +1,92 @@
+\PassOptionsToPackage{colorlinks, unicode, linkcolor=tugreen}{hyperref}
+\documentclass[compress, 9pt, aspectratio=1610, professionalfonts]{beamer}
+
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setmainlanguage{english}
+
+\usepackage{microtype}
+
+\usepackage{mathtools}
+\usepackage[
+  math-style=ISO,
+  bold-style=ISO,
+  nabla=upright,
+  partial=upright,
+]{unicode-math}
+\setmathfont{Tex Gyre Pagella Math}[Scale=MatchLowercase]
+
+\usepackage{csquotes}
+\usepackage[
+  locale=UK,
+  load-configurations=astronomy,
+  per-mode=symbol-or-fraction,
+]{siunitx}
+\DeclareSIUnit{\year}{a}
+\AtBeginDocument{%
+  \sisetup{%
+    math-rm=\mathrm,
+  }
+}
+
+\usepackage{graphicx}
+\usepackage{xcolor}
+\colorlet{darkred}{red!80!black}
+
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usetikzlibrary{calc}
+\usetikzlibrary{arrows}
+\usetikzlibrary{arrows.meta}
+\usepackage{pgfplots}
+
+% \usepackage[backend=biber, style=verbose]{biblatex}
+% \addbibresource{references.bib}
+\usepackage{hyperref}
+
+\usetheme{tudo}
+
+\input{commands.tex}
+
+\author[M.\ Nöthe]{\textit{Maximilian Nöthe}, Kai Brügge for the FACT-Collaboration}
+\date[20.2.2018]{HAP Workshop – Big Data Science in Astroparticle Research – 2018}
+\title{FACT Open Data}
+\titlegraphic{\includegraphics[width=\linewidth]{images/crab_title.jpg}}
+
+\institute[%
+  {\includegraphics[height=\headerheight]{logos/fact.pdf}}%
+  \hspace{1em}%
+  {\includegraphics[height=\headerheight]{logos/sfb876.pdf}}%
+  \hspace{1em}%
+  {\includegraphics[height=\headerheight]{logos/e5logo.pdf}}%
+]{}
+
+\begin{document}
+\begin{frame}
+  \maketitle
+\end{frame}
+
+\begin{frame}{Overview}
+  \begin{columns}[c, onlytextwidth]
+    \begin{column}{0.66\textwidth}
+      \linespread{1.5}
+      \tableofcontents[hideallsubsections]
+    \end{column}
+    \hfill
+    \begin{column}{0.33\textwidth}
+      \raggedleft
+      \includegraphics[height=0.85\textheight]{fact_claro_crop.jpg}\\
+      {\tiny[Miguel Claro]}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\section{Introduction}
+\begin{frame}
+  \begin{center}
+    \begin{tikzpicture}
+      \input{fact.tex}
+    \end{tikzpicture}
+  \end{center}
+\end{frame}
+\end{document}
