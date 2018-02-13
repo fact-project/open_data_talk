@@ -171,6 +171,39 @@
 
 \section{Data Formats}
 \begin{frame}[t]{Raw Data}
+  \begin{itemize}
+    \item FACT saves observed RAW Data in custom compressed FITS Files called \texttt{zfits}
+    \item Readers are available for
+      \begin{description}
+        \item[Python] \url{https://github.com/fact-project/zfits} 
+        \item[Java] \url{https://github.com/fact-project/fact-tools} 
+        \item[C++ (ROOT)] \url{https://trac.fact-project.org/browser/trunk/Mars} 
+      \end{description}
+    \item Simulations are stored in standard, gzipped FITS Files
+    \item Raw Data consists of a single array of length $1440 \times 300$ ($N_\text{Pixels} \times N_\text{Slices}$)
+
+      \begin{center}
+        \begin{tikzpicture}
+          \foreach \i in {0,...,2} {
+            \node[anchor=west, minimum width=0.5cm, minimum height=0.5cm, fill=blue!20, draw=black] at (\i * 0.5cm, 0) {\tiny \i};
+          }
+          \node[anchor=west, minimum width=0.5cm, minimum height=0.5cm] at (1.5cm, 0) {$\cdots$};
+          \foreach \j in {298,299} {
+            \node[anchor=west, minimum width=0.5cm, minimum height=0.5cm, fill=blue!20, draw=black] at (\j * 0.5cm - 147cm, 0) {\tiny \j};
+          }
+          \foreach \i in {0,...,2} {
+            \node[anchor=west, minimum width=0.5cm, minimum height=0.5cm, fill=green!20, draw=black] at (\i * 0.5cm + 3cm, 0) {\tiny \i};
+          }
+          \node[anchor=west, minimum width=0.5cm, minimum height=0.5cm] at (4.5cm, 0) {$\cdots$};
+          \foreach \j in {298,299} {
+            \node[anchor=west, minimum width=0.5cm, minimum height=0.5cm, fill=green!20, draw=black] at (\j * 0.5cm - 144cm, 0) {\tiny \j};
+          }
+          \node[anchor=west, minimum width=0.5cm, minimum height=0.5cm] at (6cm, 0) {$\cdots$};
+          \node at (1.5cm, -0.5cm) {Pixel 0};
+          \node at (4.5cm, -0.5cm) {Pixel 1};
+        \end{tikzpicture}
+      \end{center}
+  \end{itemize}
 \end{frame}
 
 \begin{frame}[t]{Photon Stream}
