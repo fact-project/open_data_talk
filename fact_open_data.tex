@@ -40,8 +40,8 @@
 \usetikzlibrary{arrows.meta}
 \usepackage{pgfplots}
 
-% \usepackage[backend=biber, style=verbose]{biblatex}
-% \addbibresource{references.bib}
+\usepackage[backend=biber, style=verbose]{biblatex}
+\addbibresource{references.bib}
 \usepackage{hyperref}
 
 \usetheme{tudo}
@@ -172,13 +172,14 @@
 \section{Data Formats}
 \begin{frame}[t]{Raw Data}
   \begin{itemize}
-    \item FACT saves observed RAW Data in custom compressed FITS Files called \texttt{zfits}
+    \item FACT observations are stored in custom compressed FITS Files called \texttt{zfits}\\
     \item Readers are available for
       \begin{description}
         \item[Python] \url{https://github.com/fact-project/zfits} 
         \item[Java] \url{https://github.com/fact-project/fact-tools} 
         \item[C++ (ROOT)] \url{https://trac.fact-project.org/browser/trunk/Mars} 
       \end{description}
+    \item FACT-Tools can be easily used to convert \texttt{zfits} to standard FITS
     \item Simulations are stored in standard, gzipped FITS Files
     \item Raw Data consists of a single array of length $1440 \times 300$ ($N_\text{Pixels} \times N_\text{Slices}$)
 
@@ -204,9 +205,29 @@
         \end{tikzpicture}
       \end{center}
   \end{itemize}
+    
+  \begin{center}
+    \small See: \cite{zfits}
+  \end{center}
 \end{frame}
 
-\begin{frame}[t]{Photon Stream}
+\begin{frame}[c]{Photon Stream}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.475\textwidth}
+      \begin{itemize}
+        \item The FACT Camera has single photon resolution
+        \item Each photon produces a known pulse shape 
+        \item Multiple photons just superimpose
+        \item[→] Reconstruct the arrival time of each individual photon using by subtracting pulses until a flat line is reached
+      \end{itemize}
+      \begin{center}
+        \small See: \cite{photonstream}
+      \end{center}
+    \end{column}
+    \begin{column}{0.475\textwidth}
+      \includegraphics{build/plots/phs.pdf}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 \section{FACT-Tools Standard Analysis}
