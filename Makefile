@@ -11,7 +11,14 @@ texenv = \
 
 all: build/fact_open_data.pdf
 
-build/fact_open_data.pdf: FORCE | build
+build/plots/%.pdf: scripts/plot_%.py matplotlibrc_half header-matplotlib.tex | build/plots
+	MATPLOTLIBRC=matplotlibrc_half TEXINPUTS=$(shell pwd): python $<
+
+
+plots: build/plots/drs_calib.pdf build/plots/spikes.pdf
+
+
+build/fact_open_data.pdf: FORCE plots build/plots/drs_calib.pdf | build
 	$(texenv) latexmk $(texoptions) fact_open_data.tex
 
 preview: FORCE | build

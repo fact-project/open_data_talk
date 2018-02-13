@@ -124,7 +124,7 @@
         \item[Max. Impact] \SI{270}{\meter}
         \item[Zenith Distance] \ang{0} – \ang{30}
         \item[CORSIKA Events] \num{12000000}
-        \item[Triggered Events] \num{100000}
+        \item[Triggered Events] \num{1914812}
       \end{description}
     \end{column}
     \hfill
@@ -142,10 +142,34 @@
   \end{columns}
 \end{frame}
 
-\section{Data Formats}
 \begin{frame}[t]{A FACT Analysis}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.475\textwidth}
+      Classical IACT Analysis Chain
+      \begin{enumerate}
+        \item Raw Data Calibration
+        \item Removal of electronic artifacts
+        \item Extraction of number of photons and mean arrival times for each pixel
+        \item Image parameterization
+        \item Reconstruction of particle properties
+          \begin{itemize}
+            \item Energy
+            \item Origin
+            \item Particle type (\Photon, \Proton, \Muon)
+          \end{itemize}
+      \end{enumerate}
+    \end{column}
+    \hfill
+    \begin{column}{0.475\textwidth}%
+      \only<1>{\includegraphics{build/plots/drs_calib.pdf}}%
+      \only<2>{\includegraphics{build/plots/spikes.pdf}}%
+      \only<3>{\includegraphics{images/hillas_1.pdf}}%
+      \only<4>{\includegraphics{images/hillas_2.pdf}}%
+    \end{column}%
+  \end{columns}
 \end{frame}
 
+\section{Data Formats}
 \begin{frame}[t]{Raw Data}
 \end{frame}
 
