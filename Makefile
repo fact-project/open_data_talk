@@ -17,6 +17,13 @@ build/plots/%.pdf: scripts/plot_%.py matplotlibrc_half header-matplotlib.tex | b
 
 plots: build/plots/drs_calib.pdf build/plots/spikes.pdf build/plots/phs.pdf
 
+plots: build/plots/theta2.pdf
+
+build/plots/theta2.pdf: 
+	MATPLOTLIBRC=matplotlibrc_full \
+	TEXINPUTS=$(shell pwd): \
+	fact_plot_theta_squared crab_gammas_dl3.hdf5 --theta2-cut=0.025 -o build/plots/theta2.pdf
+
 
 build/phs.jsonl.gz:
 	curl -o build/phs.jsonl.gz https://ihp-pc41.ethz.ch/public/phs/public/20131101_185.phs.jsonl.gz 

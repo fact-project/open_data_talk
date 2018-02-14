@@ -268,9 +268,49 @@
 
 \section{FACT-Tools Standard Analysis}
 \begin{frame}[t]{FACT-Tools}
+  \begin{itemize}
+    \item Extension of the \texttt{streams}-Framework to analyze FACT data
+    \item Developed at TU Dortmund and ETHZ
+    \item Also performs photonstream extraction
+  \end{itemize}
+
+  \vspace{0.25cm}
+  \begin{center}
+    \Large\url{https://github.com/fact-project/fact-tools}
+  \end{center}
+
+  \vspace{0.25cm}
+  \begin{center}
+    \begin{tikzpicture}[scale=1, transform shape]
+      \input{content/data-flow.tex}
+    \end{tikzpicture}
+  \end{center}
 \end{frame}
 
-\begin{frame}[t]{Higher-Level Analysis}
+\begin{frame}[c, fragile]{Higher-Level Analysis}
+  \begin{itemize}
+    \item We use the Scientific Python Stack
+    \item \texttt{scikit-learn} models for particle classification, energy estimation and reconstruction of origin
+  \end{itemize}
+
+  \vspace{0.25cm}
+  
+  Example analysis on the open data sample:
+
+  \begin{verbatim}
+  $ git clone https://github.com/fact-project/open_crab_sample_analysis
+  $ pip install -r requirements.txt
+  $ make
+  \end{verbatim}
+
+  This will download the data, train models, apply them and produce a $θ²$ plot for the source detection.
+
+\end{frame}
+
+\begin{frame}[t]{Result}
+  \begin{center}
+    \includegraphics{build/plots/theta2.pdf}
+  \end{center}
 \end{frame}
 
 \section{Outlook \& Conclusion}

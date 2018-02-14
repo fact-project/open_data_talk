@@ -1,0 +1,44 @@
+\tikzstyle{box}=[draw=black!50,rectangle, minimum height=1.75cm, minimum width=2cm, text width=2cm, text centered]
+
+\begin{scope}[shift={(0.5,0.25)}]
+\input{content/telescope.tex}
+\end{scope}
+
+\begin{scope}[shift={(1.85,-0.2)}]
+\draw[draw=tugreen,fill=tugreen!50] (0.2,0) -- (0.5,0) -- (0.5,-0.1) -- (0.75,0.15) -- (0.5,0.4) -- (0.5,0.3) -- (0.2,0.3) -- (0.2,0);
+\end{scope}
+
+\begin{scope}[shift={(5.05,-0.2)}]
+\draw[draw=tugreen,fill=tugreen!50] (0.2,0) -- (0.5,0) -- (0.5,-0.1) -- (0.75,0.15) -- (0.5,0.4) -- (0.5,0.3) -- (0.2,0.3) -- (0.2,0);
+\end{scope}
+
+\begin{scope}[shift={(8.05,-0.2)}]
+\draw[draw=tugreen,fill=tugreen!50] (0.2,0) -- (0.5,0) -- (0.5,-0.1) -- (0.75,0.15) -- (0.5,0.4) -- (0.5,0.3) -- (0.2,0.3) -- (0.2,0);
+\end{scope}
+
+\begin{scope}[shift={(11.05,-0.2)}]
+\draw[draw=tugreen,fill=tugreen!50] (0.2,0) -- (0.5,0) -- (0.5,-0.1) -- (0.75,0.15) -- (0.5,0.4) -- (0.5,0.3) -- (0.2,0.3) -- (0.2,0);
+\end{scope}
+%
+%\begin{scope}[shift={(14.05,-0.2)}]
+%\draw[draw=tugreen,fill=tugreen!50] (0.2,0) -- (0.5,0) -- (0.5,-0.1) -- (0.75,0.15) -- (0.5,0.4) -- (0.5,0.3) -- (0.2,0.3) -- (0.2,0);
+%\end{scope}
+
+% \begin{scope}[shift={(17.05,-0.2)}]
+% \draw[draw=tugreen,fill=tugreen!50] (0.2,0) -- (0.5,0) -- (0.5,-0.1) -- (0.75,0.15) -- (0.5,0.4) -- (0.5,0.3) -- (0.2,0.3) -- (0.2,0);
+% \end{scope}
+
+
+\node[box] (CAL) at (4,0) {\textsf{Calibration}};
+\node[box] (EXT) at (7,0) {\textsf{Signal extraction}};
+\node[box] (CLEAN) at (10,0) {\textsf{Image cleaning}};
+\node[box] (PAR) at (13,0) {\textsf{Parameterization}};
+%\node[box] (SEP) at (16,0) {\small \textsf{Gamma-Proton classification}};
+% \node[box] (EST) at (19,0) {\textsf{Flux Estimation}};
+
+
+% \draw[thick,black!60,<->] (FEAT.north) + (0.1,0) -- +(0.1, 0.25) -- +(3, 0.25) -- (SEP.north);
+% \draw[thick,black!60,<->] (FEAT.south) -- +(0,-0.25) -- +(6,-0.25) -- (SPEC.south);
+%
+% \draw[thick,black!60,<->] (CAL.north) -- +(0, 0.25) -- +(2.8,0.25) -- +(2.8,0);
+% \draw[thick,black!60,<->] (CAL.south) -- +(0,-0.25) -- +(-3.1,-0.25) -- +(-3.1,0);

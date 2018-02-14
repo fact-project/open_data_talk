@@ -1,5 +1,5 @@
 backend: pgf
-figure.figsize : 4.53, 2.8 # 5.78, 3.57 für scrartcl
+figure.figsize : 4.53, 2.7 # 5.78, 3.57 für scrartcl
 font.family : sans-serif
 font.size : 9 
 legend.fontsize : medium
