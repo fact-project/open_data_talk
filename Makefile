@@ -22,6 +22,10 @@ build/phs.jsonl.gz:
 	curl -o build/phs.jsonl.gz https://ihp-pc41.ethz.ch/public/phs/public/20131101_185.phs.jsonl.gz 
 
 
+build/runs.csv:
+	curl -o build/runs.csv https://www.fact-project.org/data/open_crab_sample_runs.csv
+
+
 build/fact_open_data.pdf: FORCE plots build/plots/drs_calib.pdf | build
 	$(texenv) latexmk $(texoptions) fact_open_data.tex
 

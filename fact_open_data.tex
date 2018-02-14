@@ -91,22 +91,48 @@
 \end{frame}
 
 \section{Dataset Overview}
-\begin{frame}[t]{The Dataset}
-  \begin{itemize}
-    \item Crab Nebula Observations from November 2013
-    \item Point-source gamma-ray simulations
-    \item Diffuse gamma-ray simulations
-    \item Diffuse proton simulations
-    \item Available in different formats and multiple analysis stages at \\ \url{https://fact-project.org/data}
-  \end{itemize}
+\begin{frame}[c]{The Dataset}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.55\textwidth}      
+      \begin{itemize}
+        \item Crab Observations from November 2013
+        \item Point-source gamma-ray simulations
+        \item Diffuse gamma-ray simulations
+        \item Diffuse proton simulations
+        \item Available in different formats and multiple analysis stages
+      \end{itemize}
+    \end{column}
+    \hfill
+    \begin{column}{0.4\textwidth}      
+      \hfill
+      \includegraphics[width=0.75\textheight]{images/crab_chandra.jpg}
+    \end{column}
+  \end{columns}
+  \vspace{0.5cm}
+  \begin{center}
+    \LARGE\url{https://fact-project.org/data}
+  \end{center}
 \end{frame}
 
-\begin{frame}[t]{Observations}
-  \begin{itemize}
-    \item \num{17.7} hours of Crab Nebula observations
-    \item Good environmental conditions
-    \item Zenith distance between \ang{5} and \ang{30}
-  \end{itemize}
+\begin{frame}[c]{Observations}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.475\textwidth}      
+      \begin{itemize}
+        \item \num{17.7} hours of Crab Nebula observations
+        \item Good environmental conditions
+        \item Zenith distance between \ang{6} and \ang{30}
+      \end{itemize}
+      \vspace{0.25cm}
+      \begin{center}
+        \includegraphics[width=0.75\linewidth]{images/gtc.jpg}
+      \end{center}
+    \end{column}
+    \hfill
+    \begin{column}{0.475\textwidth}      
+      \includegraphics{build/plots/zenith.pdf}
+    \end{column}
+  \end{columns}
+  
 \end{frame}
 
 \begin{frame}[t]{Simulations}
@@ -114,6 +140,8 @@
     \item CORSIKA for air shower simulations
     \item CERES for FACT detector response simulations
   \end{itemize}
+
+  \vspace{1cm}
 
   \begin{columns}[onlytextwidth]
     \begin{column}{0.475\textwidth}
@@ -218,7 +246,7 @@
         \item The FACT Camera has single photon resolution
         \item Each photon produces a known pulse shape 
         \item Multiple photons just superimpose
-        \item[→] Reconstruct the arrival time of each individual photon using by subtracting pulses until a flat line is reached
+        \item[→] Reconstruct the arrival time of each individual photon by subtracting pulses until a flat line is reached
       \end{itemize}
       \begin{center}
         \small See: \cite{photonstream}
