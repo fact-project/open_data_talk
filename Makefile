@@ -17,7 +17,11 @@ build/plots/%.pdf: scripts/plot_%.py matplotlibrc_half header-matplotlib.tex | b
 
 plots: build/plots/drs_calib.pdf build/plots/spikes.pdf build/plots/phs.pdf
 
-plots: build/plots/theta2.pdf
+build/plots/phs.pdf: build/phs.jsonl.gz
+
+build/plots/zenith.pdf: build/runs.csv
+
+plots: build/plots/theta2.pdf build/plots/zenith.pdf
 
 build/plots/theta2.pdf: 
 	MATPLOTLIBRC=matplotlibrc_full \
