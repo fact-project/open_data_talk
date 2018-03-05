@@ -15,7 +15,7 @@ ax1.plot(np.arange(300) / 2, raw_data[pixel * 300:(pixel + 1) * 300])
 ax1.set_ylabel(r'$\mathrm{ADC\,Counts}')
 
 ax2.plot(np.arange(300) / 2, calibrated[pixel * 300:(pixel + 1) * 300])
-ax2.set_ylabel(r'$V / \si{\milli\volt}$')
+ax2.set_ylabel(r'$U / \si{\milli\volt}$')
 ax2.set_xlabel(r'$t / \si{\nano\second}$')
 
 fig.tight_layout(pad=0)

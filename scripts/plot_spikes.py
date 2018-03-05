@@ -16,7 +16,7 @@ ax.plot(np.arange(10, 300) / 2, spike[pixel * 300 + 10:(pixel + 1) * 300])
 ax.plot(np.arange(10, 300) / 2, no_spike[pixel * 300 + 10:(pixel + 1) * 300])
 
 
-ax.set_ylabel(r'$V / \si{\milli\volt}$')
+ax.set_ylabel(r'$U / \si{\milli\volt}$')
 ax.set_xlabel(r'$t / \si{\nano\second}$')
 
 fig.tight_layout(pad=0)
