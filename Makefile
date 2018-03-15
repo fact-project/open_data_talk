@@ -23,7 +23,7 @@ build/plots/zenith.pdf: build/runs.csv
 
 plots: build/plots/theta2.pdf build/plots/zenith.pdf
 
-build/plots/theta2.pdf: 
+build/plots/theta2.pdf: crab_gammas_dl3.hdf5 
 	MATPLOTLIBRC=matplotlibrc_full \
 	TEXINPUTS=$(shell pwd): \
 	fact_plot_theta_squared crab_gammas_dl3.hdf5 --theta2-cut=0.025 -o build/plots/theta2.pdf
