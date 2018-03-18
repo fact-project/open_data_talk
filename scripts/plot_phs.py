@@ -46,8 +46,8 @@ ax.scatter(
     points[:, 0],
     points[:, 1],
     points[:, 2],
-    s=3,
-    alpha=0.2,
+    s=1,
+    alpha=0.3,
     lw=0,
     color='cyan'
 )

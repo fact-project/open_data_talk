@@ -23,6 +23,9 @@ build/plots/zenith.pdf: build/runs.csv
 
 plots: build/plots/theta2.pdf build/plots/zenith.pdf
 
+build/significance.tex: scripts/calc_significance.py
+	python scripts/calc_significance.py
+
 build/plots/theta2.pdf: crab_gammas_dl3.hdf5 
 	MATPLOTLIBRC=matplotlibrc_full \
 	TEXINPUTS=$(shell pwd): \
@@ -37,7 +40,7 @@ build/runs.csv:
 	curl -o build/runs.csv https://www.fact-project.org/data/open_crab_sample_runs.csv
 
 
-build/fact_open_data.pdf: FORCE plots build/plots/drs_calib.pdf | build
+build/fact_open_data.pdf: FORCE plots build/significance.tex build/plots/drs_calib.pdf | build
 	$(texenv) latexmk $(texoptions) fact_open_data.tex
 
 preview: FORCE | build
